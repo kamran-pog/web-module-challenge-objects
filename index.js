@@ -16,10 +16,8 @@ The function should:
 */
 
 
-function createMenuItem(/*Your code here*/){
-  /*Your code here*/
-}
-
+function createMenuItem(name, price, category){
+  return {name, price, category};
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -210,4 +208,4 @@ module.exports = {
   addReview,
   getReviewByIndex,
   getLastReview,
-}
+}}
