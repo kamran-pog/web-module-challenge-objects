@@ -31,7 +31,6 @@ Test your createMenuItems function by doing the following:
 */
 
 
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the burger object below that automatically calculates price depending on the string received as a parameter. 
 
@@ -54,7 +53,7 @@ const burger = {
 
 
 
-///////////////Reviews (MVP)///////////////////
+
 const reviews = [
     {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
     {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
@@ -79,7 +78,11 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-
+function addReview( arr, name, rating, feedback) {
+  arr.push({name, rating, feedback})
+  return arr
+}
+console.log(addReview(reviews, "Miley", 10, "That was poppin!"))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array
@@ -91,9 +94,8 @@ Write a function that creates an object with name, rating, feedback, add the new
 */
 
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
-}
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
+console.log(reviews)
 
 
 
@@ -107,10 +109,15 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(reviews, index) {
+  for(i = 0; i < reviews.length; i++) {
+    if ( i === index) {
+      return `${reviews[i].name} gave the restaurant a ${reviews[i].rating} star review and their feedback was: ${reviews[i].feedback}.`
+    }
+  }
 }
+
+console.log(getReviewByIndex(reviews, 0))
 
   
 
@@ -127,9 +134,10 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(reviews) {
+  return reviews[reviews.length-1]
 } 
+console.log(getLastReview(reviews))
 
 
 
